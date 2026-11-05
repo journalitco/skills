@@ -6,7 +6,7 @@
 
 - [ ] Folder name matches `name` in the frontmatter
 - [ ] `metadata.journalit-tools` lists every Journalit tool the skill uses
-- [ ] `metadata.writes` is correct, and if `"true"` the skill previews and asks before committing
+- [ ] `metadata.writes` is correct, and if `"true"` the skill previews before committing
 - [ ] Step 1 tells the agent to read the core `journalit` skill
 - [ ] Markdown and images only, no scripts or download links
 - [ ] No real journal data, account numbers or P&L screenshots

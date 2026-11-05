@@ -23,7 +23,7 @@ metadata:
 4. Talk it through with the user before writing anything. Ask two or three questions: what went well, what they would do differently, what to focus on next week. Use their answers, not your guesses.
 5. Draft the review text from their answers and the numbers. Show it to them and let them edit it.
 6. To save it: call `describe_actions` to see which review actions exist and their inputs, then preview with `apply_changes`. Show the user every action's preview summary, and whether Journalit will ask them to approve it in the app.
-7. Ask the user before committing. Only commit the exact preview they agreed to, with a new idempotency key. If they want changes, build a new preview.
+7. Ask the user before committing, unless they have told you to commit without asking. Only commit the exact preview they agreed to, with a new idempotency key. If they want changes, build a new preview.
 8. Report the outcome. On `approval_pending`, tell them to approve it on the card in Journalit. On `approval_denied`, stop. Offer `navigate_journalit` to open the saved review.
 
 Coaching, not advice: reflect their own data and words back, do not diagnose, do not promise results.

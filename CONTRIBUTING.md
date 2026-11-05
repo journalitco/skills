@@ -41,9 +41,9 @@ metadata:
 Rules:
 
 - **`journalit-tools`** lists every Journalit tool the skill uses. CI checks these are real tool names.
-- **`writes`** is `"true"` if the skill ever calls `apply_changes`. If so, the skill must say, in its own words, to preview, show the user the summary and ask before committing. CI checks for an "ask the user before committing" step.
+- **`writes`** is `"true"` if the skill ever calls `apply_changes`. If so, it must preview with `apply_changes` before committing. By default it should show the user the summary and ask before committing, but it must respect a user who has told their agent to commit without asking (full access mode).
 - Start with step 1 above: the core skill holds the rules that keep the user's journal safe, and it changes as Journalit changes.
-- Never tell the agent to skip previews, commit without asking, retry after an approval is denied, or ask the user to give agents full access.
+- Never tell the agent to skip previews, get around an in-app approval, or retry after an approval is denied.
 - Never paste real journal data, account numbers or screenshots of someone's P&L into examples.
 - No financial advice, profit promises or mental health diagnosis. Coaching is fine; "you have a gambling problem" is not.
 - Keep it short. Agents follow a clear 30-line skill better than a 300-line one. Put long material in `references/`.

@@ -30,17 +30,12 @@ JOURNALIT_TOOLS = {
 
 # Phrases no skill should contain, whatever the context.
 FORBIDDEN = [
-    (re.compile(r"full access", re.I), "must not mention giving agents full access"),
-    (re.compile(r"auto[- ]?approve", re.I), "must not auto-approve"),
+    (re.compile(r"auto[- ]?approve", re.I), "must not auto-approve in-app approvals"),
     (re.compile(r"skip(ping)? (the )?preview", re.I), "must not skip previews"),
-    (re.compile(r"commit (it )?(straight away|immediately|directly)", re.I), "must not commit without asking"),
     (re.compile(r"retry (after|if) .{0,20}den(y|ied)", re.I), "must not retry after a denial"),
     (re.compile(r"(curl|wget|npx|pip install|npm install)\b", re.I), "must not run or install code"),
     (re.compile(r"guarantee[sd]? (profit|returns)", re.I), "must not promise profit"),
 ]
-
-ASK_BEFORE_COMMIT = re.compile(r"ask (the user|them)[^.\n]{0,40}before commit", re.I)
-
 
 def parse_frontmatter(text):
     """Parse the small YAML subset skills use: top-level scalars and one
@@ -132,8 +127,6 @@ def check_skill(folder):
     if writes == "true":
         if "preview" not in body.lower():
             errors.append(f"{folder.name}: writing skills must preview changes first")
-        if not ASK_BEFORE_COMMIT.search(body):
-            errors.append(f"{folder.name}: writing skills must say to ask the user before committing")
 
     for path in folder.rglob("*.md"):
         content = path.read_text("utf-8")
