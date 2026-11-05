@@ -24,17 +24,21 @@ npx skills add journalitco/skills
 
 Or copy a folder from `skills/` into your agent's skills directory (for Claude Code, `~/.claude/skills/`).
 
-Or just point your agent at it: "Read https://github.com/journalitco/skills/tree/main/skills/weekly-review and follow it."
+Or just point your agent at it:
+
+```text
+Read https://github.com/journalitco/skills/tree/main/skills/weekly-review and follow it.
+```
 
 ## Skills
 
 | Skill | What it does | Writes to your journal? | Author |
 | --- | --- | --- | --- |
-| [premarket-prep](skills/premarket-prep) | A short brief before you trade: lessons, goals, recent mistakes, tilt signals | No | Journalit |
-| [weekly-review](skills/weekly-review) | Walks through your week and drafts a weekly review for you to approve | Only after you approve the preview | Journalit |
-| [mistake-audit](skills/mistake-audit) | What your tagged mistakes cost you, and which one to fix first | No | Journalit |
+| [premarket-prep](skills/premarket-prep) | A short brief before you trade: lessons, goals, recent mistakes, tilt signals | No | Official (Journalit) |
+| [weekly-review](skills/weekly-review) | Walks through your week and drafts a weekly review for you to approve | Only after you approve the preview | Official (Journalit) |
+| [mistake-audit](skills/mistake-audit) | What your tagged mistakes cost you, and which one to fix first | No | Official (Journalit) |
 
-`Official` skills are maintained by the Journalit team. `Community` skills are maintained by their authors and reviewed by the team before every merge.
+`Official` skills are maintained by the Journalit team. `Community (@handle)` skills are maintained by their authors and reviewed by the team before every merge.
 
 ## Safety
 
