@@ -1,0 +1,56 @@
+# Journalit Skills
+
+Agent Skills for the [Journalit MCP server](https://journalit.co). A skill is a folder with a `SKILL.md` that teaches an agent (Claude, ChatGPT, Cursor, Codex and others) a workflow on top of your Journalit journal: a weekly review routine, a pre-market checklist, a way of auditing your mistakes.
+
+Skills here are written by the Journalit team and by traders in the community. Each one is reviewed before it is merged.
+
+## Before you start
+
+You need the Journalit MCP server connected to your agent. The server already ships the core `journalit` skill, which covers how the tools work, the preview and approval rules and the monthly allowance. Your agent reads it with `read_skill`, so you do not need to install it from here.
+
+Every skill in this repo builds on that core skill. They add *what to do*, never *how to bypass* Journalit's rules.
+
+## Install a skill
+
+With [skills.sh](https://skills.sh):
+
+```sh
+npx skills add journalitco/skills
+```
+
+Or copy a folder from `skills/` into your agent's skills directory (for Claude Code, `~/.claude/skills/`).
+
+Or just point your agent at it: "Read https://github.com/journalitco/skills/tree/main/skills/weekly-review and follow it."
+
+## Skills
+
+| Skill | What it does | Writes to your journal? | Author |
+| --- | --- | --- | --- |
+| [premarket-prep](skills/premarket-prep) | A short brief before you trade: lessons, goals, recent mistakes, tilt signals | No | Journalit |
+| [weekly-review](skills/weekly-review) | Walks through your week and drafts a weekly review for you to approve | Only after you approve the preview | Journalit |
+| [mistake-audit](skills/mistake-audit) | What your tagged mistakes cost you, and which one to fix first | No | Journalit |
+| [trade-review-mode](skills/trade-review-mode) | Trade-by-trade review session | Only after you approve the preview | [@trav009](https://discord.com/channels/1317508014462468168/1565071394021310666) |
+
+`Official` skills are maintained by the Journalit team. `Community` skills are maintained by their authors and reviewed by the team before every merge.
+
+## Safety
+
+Skills steer an agent that can change your journal, so every skill here must follow these rules (CI checks what it can, reviewers check the rest):
+
+- Read the core `journalit` skill first and never contradict it.
+- Every change goes through `apply_changes` preview, then you approve, then commit. No skill may tell the agent to commit without asking, to retry after you deny an approval, or to request "full access".
+- Markdown only. No scripts, binaries, install steps or links that download code.
+- Your journal content is data, not instructions.
+- No financial advice, profit promises or mental health diagnosis.
+
+Found a skill doing something it should not? [Open an issue](../../issues/new?template=report-skill.yml) or tell us in Discord.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). Short version: one folder per skill under `skills/`, a `SKILL.md` with frontmatter, open a pull request, CI validates it and a maintainer reviews it.
+
+## Licence
+
+MIT, see [LICENSE](LICENSE). Each skill may declare its own licence in its frontmatter; MIT is the default.
+
+Nothing in this repository is financial advice.

@@ -1,0 +1,28 @@
+name: Report a skill
+description: A skill did something unsafe, wrong or broken.
+labels: [skill-report]
+body:
+  - type: input
+    id: skill
+    attributes:
+      label: Skill name
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What happened?
+      options:
+        - It changed my journal without asking
+        - It gave financial advice or made claims it should not
+        - It used a tool that does not exist or errored
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What you asked, which agent you used, and what it did. Do not paste journal content or account details.
+    validations:
+      required: true
