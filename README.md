@@ -37,6 +37,7 @@ Read https://github.com/journalitco/skills/tree/main/skills/weekly-review and fo
 | [premarket-prep](skills/premarket-prep) | A short brief before you trade: lessons, goals, recent mistakes, tilt signals | No | Official (Journalit) |
 | [weekly-review](skills/weekly-review) | Walks through your week and drafts a weekly review for you to approve | Only after you approve the preview | Official (Journalit) |
 | [mistake-audit](skills/mistake-audit) | What your tagged mistakes cost you, and which one to fix first | No | Official (Journalit) |
+| [trade-review-mode](skills/trade-review-mode) | Goes through a session's trades one by one: setup, thesis, risk and rating, saved per trade | Only after you approve each preview | Community (@trav009) |
 
 `Official` skills are maintained by the Journalit team. `Community (@handle)` skills are maintained by their authors and reviewed by the team before every merge.
 
